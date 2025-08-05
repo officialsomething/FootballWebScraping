@@ -19,18 +19,16 @@ namespace WebScraper
 
             // get team stats using the xPath for that line of the table
             var PF_Element = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"team_stats\"]/tbody/tr[1]/td[1]");
+            var yards_Element = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"team_stats\"]/tbody/tr[1]/td[2]");
+            var passingTD_Element = htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"team_stats\"]/tbody/tr[1]/td[11]");
 
-            if (PF_Element != null)
-            {
-                // store text value from PF_Element
-                var PF = PF_Element.InnerText;
+            var PF = PF_Element.InnerText;
+            var yards = yards_Element.InnerText;
+            var passingTD = passingTD_Element.InnerText;
 
-                Console.WriteLine("Points for the Bills: " + PF);
-            }
-            else
-            {
-                Console.WriteLine("Value is null");
-            }
+            Console.WriteLine("Points for: " + PF);
+            Console.WriteLine("Total yards: " + yards);
+            Console.WriteLine("Number passing touchdowns: " + passingTD);
 
         }
     }
