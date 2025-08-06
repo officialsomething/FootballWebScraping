@@ -7,7 +7,7 @@ namespace WebScraper
     public class TeamProgram
     {
 
-        public void controller(string url)
+        public void controllerAFCEast(string url)
         {
 
             HtmlDocument html = fetchHTML(url);
@@ -30,6 +30,34 @@ namespace WebScraper
             else if (url == "https://www.pro-football-reference.com/teams/nyj/2024.htm")
             {
                 Console.WriteLine("New York Jets:");
+            }
+
+            display(PF, yards, passingTD);
+        }
+
+        public void controllerAFCSouth(string url)
+        {
+
+            HtmlDocument html = fetchHTML(url);
+            string PF = fetchPointsFor(html);
+            string yards = fetchYards(html);
+            string passingTD = fetchPassingTD(html);
+
+            if (url == "https://www.pro-football-reference.com/teams/htx/2024.htm")
+            {
+                Console.WriteLine("Houston Texans:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/clt/2024.htm")
+            {
+                Console.WriteLine("Indianapolis Colts:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/jax/2024.htm")
+            {
+                Console.WriteLine("Jacksonville Jaguars:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/oti/2024.htm")
+            {
+                Console.WriteLine("Tennessee Titans:");
             }
 
             display(PF, yards, passingTD);
