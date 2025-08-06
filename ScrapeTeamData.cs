@@ -63,6 +63,34 @@ namespace WebScraper
             display(PF, yards, passingTD);
         }
 
+        public void controllerAFCNorth(string url)
+        {
+
+            HtmlDocument html = fetchHTML(url);
+            string PF = fetchPointsFor(html);
+            string yards = fetchYards(html);
+            string passingTD = fetchPassingTD(html);
+
+            if (url == "https://www.pro-football-reference.com/teams/rav/2024.htm")
+            {
+                Console.WriteLine("Baltimore Ravens:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/pit/2024.htm")
+            {
+                Console.WriteLine("Pittsburgh Steelers:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/cin/2024.htm")
+            {
+                Console.WriteLine("Cincinnati Bengals:");
+            }
+            else if (url == "https://www.pro-football-reference.com/teams/cle/2024.htm")
+            {
+                Console.WriteLine("Cleaveland Browns:");
+            }
+
+            display(PF, yards, passingTD);
+        }
+
         public HtmlDocument fetchHTML(String url)
         {
             var httpClient = new HttpClient();

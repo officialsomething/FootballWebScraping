@@ -32,6 +32,16 @@ namespace mainBoi
             url = "https://www.pro-football-reference.com/teams/oti/2024.htm";
             program.controllerAFCSouth(url);
 
+            Console.WriteLine("Here are the stats for the AFC North.");
+            url = "https://www.pro-football-reference.com/teams/rav/2024.htm";
+            program.controllerAFCNorth(url);
+            url = "https://www.pro-football-reference.com/teams/pit/2024.htm";
+            program.controllerAFCNorth(url);
+            url = "https://www.pro-football-reference.com/teams/cin/2024.htm";
+            program.controllerAFCNorth(url);
+            url = "https://www.pro-football-reference.com/teams/cle/2024.htm";
+            program.controllerAFCNorth(url);
+
         }
     }
 }
