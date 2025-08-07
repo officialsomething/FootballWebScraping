@@ -10,7 +10,7 @@ namespace WebScraper
 
         public void controllerAFCEast(string url)
         {
-            utility myUtil = new utility();
+            myUtilities myUtil = new myUtilities();
             HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);
@@ -38,7 +38,7 @@ namespace WebScraper
 
         public void controllerAFCSouth(string url)
         {
-            utility myUtil = new utility();
+            myUtilities myUtil = new myUtilities();
             HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);
@@ -66,7 +66,7 @@ namespace WebScraper
 
         public void controllerAFCNorth(string url)
         {
-            utility myUtil = new utility();
+            myUtilities myUtil = new myUtilities();
             HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);

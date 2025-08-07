@@ -1,4 +1,5 @@
 using HtmlAgilityPack;
+using OtherWebScraper;
 using System;
 using System.Net.Http;
 using WebScraper;
@@ -9,6 +10,11 @@ namespace mainBoi
     {
         static void Main(String[] args)
         {
+            PlayerProgram program = new PlayerProgram();
+            string url = "https://www.pro-football-reference.com/teams/buf/2024.htm";
+            program.fetchOffensivePlayers(url);
+
+            /*
             Console.WriteLine("Here are the stats for the AFC East.");
 
             TeamProgram program = new TeamProgram();
@@ -41,6 +47,8 @@ namespace mainBoi
             program.controllerAFCNorth(url);
             url = "https://www.pro-football-reference.com/teams/cle/2024.htm";
             program.controllerAFCNorth(url);
+
+            */
 
         }
     }

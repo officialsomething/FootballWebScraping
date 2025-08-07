@@ -4,7 +4,7 @@ using System.Net.Http;
 
 namespace utilities
 {
-    public class utility
+    public class myUtilities
     {
         public HtmlDocument fetchHTML(String url)
         {
