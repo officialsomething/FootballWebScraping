@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Net.Http;
+using utilities;
 
 namespace WebScraper
 {
@@ -9,8 +10,8 @@ namespace WebScraper
 
         public void controllerAFCEast(string url)
         {
-
-            HtmlDocument html = fetchHTML(url);
+            utility myUtil = new utility();
+            HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);
             string passingTD = fetchPassingTD(html);
@@ -37,8 +38,8 @@ namespace WebScraper
 
         public void controllerAFCSouth(string url)
         {
-
-            HtmlDocument html = fetchHTML(url);
+            utility myUtil = new utility();
+            HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);
             string passingTD = fetchPassingTD(html);
@@ -65,8 +66,8 @@ namespace WebScraper
 
         public void controllerAFCNorth(string url)
         {
-
-            HtmlDocument html = fetchHTML(url);
+            utility myUtil = new utility();
+            HtmlDocument html = myUtil.fetchHTML(url);
             string PF = fetchPointsFor(html);
             string yards = fetchYards(html);
             string passingTD = fetchPassingTD(html);
@@ -89,18 +90,6 @@ namespace WebScraper
             }
 
             display(PF, yards, passingTD);
-        }
-
-        public HtmlDocument fetchHTML(String url)
-        {
-            var httpClient = new HttpClient();
-            // import raw html and store into var
-            var html = httpClient.GetStringAsync(url).Result;
-            // put html into Document object for usage
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(html);
-            return htmlDocument;
-
         }
 
         private string fetchPointsFor(HtmlDocument htmlDocument)
